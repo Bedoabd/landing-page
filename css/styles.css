@@ -15,11 +15,11 @@ body {
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
     margin: 0;
     font-family: 'Merriweather', serif;
-    color: #fff;
+    color: #ddd;
 }
 .scroll {
     position: fixed;
-    color: #fff;
+    color: #ddd;
     bottom: 10%;
     right:-30%;
     transform: translateY(50%);
@@ -39,8 +39,8 @@ body {
     right: 30px;
 }
 .scroll:hover {
-    color: #000;
-    background-color: #fff;
+    color: #333;
+    background-color: #ddd;
 }
 
 /* Typeography General*/
@@ -58,15 +58,15 @@ h1 {
 }
 
 h2 {
-    border-bottom: 1px solid #cc1;
+    border-bottom: 1px solid #eee;
     font-family: 'Oxygen', Sans-Serif;
     font-size: 3em;
-    color: #fff;
+    color: #ddd;
 }
 
 p {
     line-height: 1.6em;
-    color: #eee;
+    color: #ddd;
 }
 
 /* ---- Layout Rules ---- */
@@ -88,6 +88,50 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+.nav-icon {
+    top: 40px;
+    left: 90px;
+    z-index: 15;
+    box-sizing: border-box;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 10%;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 10px;
+    transition: 0.8s;
+    display: none;
+}
+.nav-icon .line {
+    height: 4px;
+    width: 31px;
+    background-color: #333;
+    display: block;
+    margin: 5px;
+    border-radius: 2px;
+    transition: 0.4s;
+}
+.nav-icon.x-mark {
+    background-color: #333;
+
+}
+.nav-icon.x-mark .line{
+    background-color: white;
+}
+.nav-icon.x-mark .line:first-child{
+    transform: translateY(9px) rotate(45deg);
+}
+.nav-icon.x-mark .line:nth-child(2){
+    transform: rotate(90deg);
+}
+.nav-icon.x-mark .line:last-child{
+    transform: translateY(-9px) rotate(-45deg);
+
+}
+
+
+
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
@@ -105,6 +149,7 @@ section {
     font-weight: bold;
     text-decoration: none;
     color: #000;
+    transition: 0.8s;
 }
 @media (max-width:350px) {
     .navbar__menu .menu__link{
@@ -113,34 +158,66 @@ section {
 }
 .navbar__menu .menu__link:hover {
     background: #333;
-    color: #fff;
+    color: #ddd;
     transition: ease 0.3s all;
 }
 .navbar__menu .menu__link.selected {
     background: #333;
-    color: #fff;
+    color: #ddd;
     transition: ease 0.3s all;
 }
 
+@media (max-width: 768px){
+    .nav-icon {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .navbar__menu ul {
+        display: none;
 
+    }
+    .navbar__menu ul.show-menu{
+        display: block;
+    }
+    .navbar__menu .menu__link {
+    }
+    .navbar__menu li {
+        margin-right: 5%;
+        display: block;
+        background: #ddd;
+        color: #333;
+        border-radius: 5px;
+    }
+    .navbar__menu .menu__link.selected {
+        background: #333;
+        color:#ddd;
+        transition: ease 0.3s all;
+    }
+    .navbar__menu .menu__link:hover {
+        background: #333;
+        color:#ddd;
+        transition: ease 0.3s all;
+    }
+}
 /* Header Styles */
 .page__header {
-    background: #fff;
+    background: #ddd;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 5;
+    padding: 10px;
 }
 
 /* Footer Styles */
 .page__footer {
-    background: #000;
+    background: #333;
     padding: 3em;
-    color: #fff;
+    color: #ddd;
 }
 
 .page__footer p{
-    color: #fff;
+    color: #ddd;
 }
 
 

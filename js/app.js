@@ -25,6 +25,8 @@
 const unOrderedList = document.getElementById('navbar__list');
 const sections = document.querySelectorAll('section');
 const fragment = document.createDocumentFragment();
+const toTop = document.querySelector('.scroll');
+    const links = document.querySelectorAll('.menu__link');
 /**
  * End Global Variables
  * Start Helper Functions
@@ -42,6 +44,7 @@ function navMenu (){
             section.scrollIntoView({
                 behavior:"smooth",
             });
+            showMenu()
         });
         item.appendChild(itemSpan);
         fragment.appendChild(item);
@@ -55,9 +58,7 @@ window.addEventListener('load', navMenu);
  * Begin Main Functions
  * 
  */
- const toTop = document.querySelector('.scroll')
 window.addEventListener('scroll', function(){
-    const links = document.querySelectorAll('.menu__link')
     for (const section of sections) {
         let activeLink = document.querySelector(`span[data-nav="${section.id}"]`)
         if(window.scrollY >= section.offsetTop - section.offsetHeight*0.25 && window.scrollY <= section.offsetTop + section.offsetHeight*0.75){
@@ -81,7 +82,15 @@ window.addEventListener('scroll', function(){
     }
 });
 toTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:"smooth"}))
-// build the nav
+// build the nav    
+const navIcon = document.querySelector('.nav-icon')
+navIcon.addEventListener('click',()=>{
+    showMenu()
+})
+function showMenu(){
+    navIcon.classList.toggle('x-mark')
+    unOrderedList.classList.toggle('show-menu')
+}
 
 // Add class 'active' to section when near top of viewport
 
