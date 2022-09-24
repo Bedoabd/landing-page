@@ -18,13 +18,11 @@
  * Great to have comments before crucial code sections within the procedure.
 */
 
+
 // define global values
 const unOrderedList = document.getElementById('navbar__list');
 const sections = document.querySelectorAll('section');
 const fragment = document.createDocumentFragment();
-const toTop = document.querySelector('.scroll');
-const links = document.querySelectorAll('.menu__link');
-const navIcon = document.querySelector('.nav-icon');
 // 
 
 // start build nav menu
@@ -34,15 +32,12 @@ function navMenu (){
         const item = document.createElement('li');
         const itemSpan = document.createElement('span');
         itemSpan.textContent = secHeader;
-        itemSpan.setAttribute('data-nav',section.id);
+        itemSpan.setAttribute('data-nav',section.id)
         itemSpan.classList.add('menu__link');
-        // function to scroll to the clicked section
         itemSpan.addEventListener('click', ()=>{
             section.scrollIntoView({
-                behavior:'smooth',
+                behavior:"smooth",
             });
-            // call function to hide the sections links when it's clicked
-            showMenu();
         });
         item.appendChild(itemSpan);
         fragment.appendChild(item);
@@ -53,12 +48,13 @@ function navMenu (){
 window.addEventListener('load', navMenu);
 // end build nav menu
 
+
 // on scroll, active the shown section
+const toTop = document.querySelector('.scroll')
 window.addEventListener('scroll', function(){
-    // loop to loop over the sections
+    const links = document.querySelectorAll('.menu__link')
     for (const section of sections) {
-        let activeLink = document.querySelector(`span[data-nav="${section.id}"]`);
-        // condition to know which section id shown
+        let activeLink = document.querySelector(`span[data-nav="${section.id}"]`)
         if(window.scrollY >= section.offsetTop - section.offsetHeight*0.25 && window.scrollY <= section.offsetTop + section.offsetHeight*0.75){
             section.classList.add('your-active-class');
             links.forEach((activeLink)=>{
@@ -71,30 +67,28 @@ window.addEventListener('scroll', function(){
         }else{
             section.classList.remove('your-active-class');
             activeLink.classList.remove('selected');
-        };
-    };
-    // condition to detect when to add the scroll to top button
+        }
+    }
     if(window.scrollY >= 600){
-        toTop.classList.add('active');
+        toTop.classList.add('active')
     }else{
-        toTop.classList.remove('active');
-    };
+        toTop.classList.remove('active')
+    }
 });
 // 
 
 // add scroll to the top button when u swipe down
-toTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:"smooth"}));
-// 
+toTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:"smooth"}))
+
 
 // show the menu on click
 navIcon.addEventListener('click',()=>{
     showMenu();
 });
+
 // function to toggle between remove or add the class when it's called
 function showMenu(){
     navIcon.classList.toggle('x-mark');
     unOrderedList.classList.toggle('show-menu');
 };
 // 
-
-
