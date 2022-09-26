@@ -22,7 +22,6 @@
  * Define Global Variables
  * 
 */
-const navIcon = document.querySelector('.nav-icon')
 const unOrderedList = document.getElementById('navbar__list');
 const sections = document.querySelectorAll('section');
 const fragment = document.createDocumentFragment();
@@ -84,6 +83,7 @@ window.addEventListener('scroll', function(){
 });
 toTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:"smooth"}))
 // build the nav    
+const navIcon = document.querySelector('.nav-icon');
 navIcon.addEventListener('click',()=>{
     showMenu()
 })
