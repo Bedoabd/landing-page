@@ -22,11 +22,12 @@
  * Define Global Variables
  * 
 */
+const navIcon = document.querySelector('.nav-icon')
 const unOrderedList = document.getElementById('navbar__list');
 const sections = document.querySelectorAll('section');
 const fragment = document.createDocumentFragment();
 const toTop = document.querySelector('.scroll');
-    const links = document.querySelectorAll('.menu__link');
+const links = document.querySelectorAll('.menu__link');
 /**
  * End Global Variables
  * Start Helper Functions
@@ -83,7 +84,6 @@ window.addEventListener('scroll', function(){
 });
 toTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:"smooth"}))
 // build the nav    
-const navIcon = document.querySelector('.nav-icon')
 navIcon.addEventListener('click',()=>{
     showMenu()
 })

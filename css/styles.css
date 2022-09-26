@@ -136,6 +136,7 @@ section {
     padding-left: 0;
     margin: 0;
     text-align: right;
+    font: 1em sans-serif;
 }
 
 .navbar__menu li {
