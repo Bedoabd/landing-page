@@ -45,7 +45,9 @@ function navMenu (){
             section.scrollIntoView({
                 behavior:"smooth",
             });
-            showMenu()
+            if(window.innerWidth <= 769){
+                showMenu()
+            }
         });
         item.appendChild(itemSpan);
         fragment.appendChild(item);
@@ -64,13 +66,10 @@ window.addEventListener('scroll', function(){
         let activeLink = document.querySelector(`span[data-nav="${section.id}"]`)
         if(window.scrollY >= section.offsetTop - section.offsetHeight*0.25 && window.scrollY <= section.offsetTop + section.offsetHeight*0.75){
             section.classList.add('your-active-class');
-            links.forEach((activeLink)=>{
-                if(activeLink.dataset.nav == section.id){
-                    activeLink.classList.add('selected');
-                } else {
-                    activeLink.classList.remove('selected');
-                }
+            links.forEach((activeLinks)=>{
+                activeLinks.classList.remove('selected');
             });
+            activeLink.classList.add('selected');
         }else{
             section.classList.remove('your-active-class');
             activeLink.classList.remove('selected');

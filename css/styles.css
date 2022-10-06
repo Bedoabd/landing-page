@@ -93,7 +93,6 @@ section {
     left: 90px;
     z-index: 15;
     box-sizing: border-box;
-    display: block;
     width: fit-content;
     margin-left: auto;
     margin-right: 10%;
@@ -150,7 +149,7 @@ section {
     font-weight: bold;
     text-decoration: none;
     color: #000;
-    transition: 0.8s;
+    transition: 0.4s;
 }
 @media (max-width:350px) {
     .navbar__menu .menu__link{
@@ -179,8 +178,6 @@ section {
     }
     .navbar__menu ul.show-menu{
         display: block;
-    }
-    .navbar__menu .menu__link {
     }
     .navbar__menu li {
         margin-right: 5%;
