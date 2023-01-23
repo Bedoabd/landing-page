@@ -11,8 +11,8 @@
 
 /* ---- Base Rules ---- */
 body {
-    background: rgb(136,203,171);
-    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    background: #F96903;
+    background: linear-gradient(0deg,#F96903  0%, #414D50 100%);
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #ddd;
@@ -26,7 +26,7 @@ body {
     font-size: 20px;
     font-weight: bolder;
     font-family: 'Fira Sans', sans-serif;
-    background-color: #333;
+    background-color: #414D50;
     padding: 20px;
     border-radius: 50%;
     transition: 0.5s;
@@ -39,8 +39,8 @@ body {
     right: 30px;
 }
 .scroll:hover {
-    color: #333;
-    background-color: #ddd;
+    color:  #ddd;
+    background-color:#F96903;
 }
 
 /* Typeography General*/
@@ -106,14 +106,14 @@ section {
 .nav-icon .line {
     height: 4px;
     width: 31px;
-    background-color: #333;
+    background-color: #414D50;
     display: block;
     margin: 5px;
     border-radius: 2px;
     transition: 0.4s;
 }
 .nav-icon.x-mark {
-    background-color: #333;
+    background-color: #414D50;
 
 }
 .nav-icon.x-mark .line{
@@ -129,9 +129,6 @@ section {
     transform: translateY(-9px) rotate(-45deg);
 
 }
-
-
-
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
@@ -148,7 +145,7 @@ section {
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
-    color: #000;
+    color: #414D50;
     transition: 0.8s;
 }
 @media (max-width:350px) {
@@ -157,7 +154,7 @@ section {
     }
 }
 .navbar__menu .menu__link:hover {
-    background: #333;
+    background: #414D50;
     color: #ddd;
     transition: ease 0.3s all;
 }
@@ -179,22 +176,22 @@ section {
     .navbar__menu ul.show-menu{
         display: block;
     }
-    .navbar__menu .menu__link {
-    }
+    /* .navbar__menu .menu__link {
+    } */
     .navbar__menu li {
         margin-right: 5%;
         display: block;
         background: #ddd;
-        color: #333;
+        color: #414D50;
         border-radius: 5px;
     }
     .navbar__menu .menu__link.selected {
-        background: #333;
+        background: #414D50;
         color:#ddd;
         transition: ease 0.3s all;
     }
     .navbar__menu .menu__link:hover {
-        background: #333;
+        background: #414D50;
         color:#ddd;
         transition: ease 0.3s all;
     }
@@ -211,7 +208,7 @@ section {
 
 /* Footer Styles */
 .page__footer {
-    background: #333;
+    background: #414D50;
     padding: 3em;
     color: #ddd;
 }
