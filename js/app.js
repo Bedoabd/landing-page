@@ -18,14 +18,21 @@
  * Great to have comments before crucial code sections within the procedure.
 */
 
-
-// define global values
+/**
+ * Define Global Variables
+ * 
+*/
 const unOrderedList = document.getElementById('navbar__list');
 const sections = document.querySelectorAll('section');
 const fragment = document.createDocumentFragment();
-// 
-
-// start build nav menu
+const toTop = document.querySelector('.scroll');
+const links = document.querySelectorAll('.menu__link');
+const navIcon = document.querySelector('.nav-icon');
+/**
+ * End Global Variables
+ * Start Helper Functions
+ * 
+*/
 function navMenu (){
     sections.forEach(function (section){
         const secHeader = section.dataset.nav;
@@ -38,32 +45,31 @@ function navMenu (){
             section.scrollIntoView({
                 behavior:"smooth",
             });
+            if(window.innerWidth <= 769){
+                showMenu()
+            }
         });
         item.appendChild(itemSpan);
         fragment.appendChild(item);
     });
     unOrderedList.appendChild(fragment);
 }
-// event to hold building the nav till the the page is loaded
 window.addEventListener('load', navMenu);
-// end build nav menu
 
-
-// on scroll, active the shown section
-const toTop = document.querySelector('.scroll')
+/**
+ * End Helper Functions
+ * Begin Main Functions
+ * 
+ */
 window.addEventListener('scroll', function(){
-    const links = document.querySelectorAll('.menu__link')
     for (const section of sections) {
         let activeLink = document.querySelector(`span[data-nav="${section.id}"]`)
         if(window.scrollY >= section.offsetTop - section.offsetHeight*0.25 && window.scrollY <= section.offsetTop + section.offsetHeight*0.75){
             section.classList.add('your-active-class');
-            links.forEach((activeLink)=>{
-                if(activeLink.dataset.nav == section.id){
-                    activeLink.classList.add('selected');
-                } else {
-                    activeLink.classList.remove('selected');
-                }
+            links.forEach((activeLinks)=>{
+                activeLinks.classList.remove('selected');
             });
+            activeLink.classList.add('selected');
         }else{
             section.classList.remove('your-active-class');
             activeLink.classList.remove('selected');
@@ -75,20 +81,31 @@ window.addEventListener('scroll', function(){
         toTop.classList.remove('active')
     }
 });
-// 
-
-// add scroll to the top button when u swipe down
 toTop.addEventListener('click', ()=> window.scrollTo({top:0,behavior:"smooth"}))
-
-
-// show the menu on click
+// build the nav    
 navIcon.addEventListener('click',()=>{
-    showMenu();
-});
-
-// function to toggle between remove or add the class when it's called
+    showMenu()
+})
 function showMenu(){
-    navIcon.classList.toggle('x-mark');
-    unOrderedList.classList.toggle('show-menu');
-};
-// 
+    navIcon.classList.toggle('x-mark')
+    unOrderedList.classList.toggle('show-menu')
+}
+
+// Add class 'active' to section when near top of viewport
+
+
+// Scroll to anchor ID using scrollTO event
+
+/**
+ * End Main Functions
+ * Begin Events
+ * 
+*/
+
+// Build menu 
+
+// Scroll to section on link click
+
+// Set sections as active
+
+
